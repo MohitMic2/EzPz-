@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZPZ PDF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+        integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body  style="background-color: #fffef1;">
+    <div class="container"
+        style="width: 100%
+        ; margin: 50px auto; border: 1px solid #ccc; border-radius: 5px; padding: 0; overflow: hidden; position: relative;">
+        <div style="transform: rotate(-40deg); position:absolute; top: 30%;left: 4%;opacity: 0.1;z-index: 0;">
+            <img src="https://ezpz.microlent.com/EZPZ_logo.png" style="width: 100%;" alt="">
+        </div>
+
+         
+       <header class="py-3 px-4" style="background-color: #EDE75F;">
+            <div style="display: flex;align-items: start;">
+                <div style="width: 80%;">
+                    <h3 style="text-transform: uppercase;font-weight: 700;">{{data.title}}</h3>
+                </div>
+                <div style="width: 20%;">
+                    <img src="https://ezpz.microlent.com/EZPZ_logo.png" style="height: 78px; width: 77%; object-fit: cover;" alt="">
+                </div>
+            </div>
+        </header>
+
+        
+        <section class="py-3 px-4">
+            <div>
+                <h4
+                    style="font-weight: 800; border-bottom: 2px solid #E17602; color: #E17602; padding: 10px; margin-bottom: 20px;">
+                    {{!-- {{data.tripDetails.duration}}  --}}
+                     </h4>
+                <div style="padding: 0px 25px 10px;">
+                    <div style="display: flex;align-items: center;margin-bottom: 10px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Duration:-</strong>
+                        <p style="margin-bottom: 0;">{{data.tripdetails.duration}}</p>
+                    </div>
+                    <div style="display: flex;align-items: center;margin-bottom: 10px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Budget:-</strong>
+                        <p style="margin-bottom: 0;">{{data.tripdetails.budget}}</p>
+                    </div>
+                    <div style="display: flex;align-items: center;margin-bottom: 10px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Traveling:-</strong>
+                        <p style="margin-bottom: 0;">{{data.tripdetails.traveling}}</p>
+                    </div>
+                    <div style="display: flex;align-items: center;margin-bottom: 10px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Experience:-</strong>
+                        <p style="margin-bottom: 0;">{{data.tripdetails.experience}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 25px 0;">
+     {{#each data.description}}
+             <div>
+                <h4
+                    style="font-weight: 800; border-bottom: 2px solid #E17602; color: #E17602; padding: 10px; margin-bottom: 20px;">
+                    {{this.heading1}}</h4>
+                <div style="padding: 0px 25px 5px;">
+                    {{#each this.heading2}}
+                    <div style="display: column;align-items: center;margin-bottom: 15px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Morning:-</strong><br>
+                        <p style="marg
+                        in-bottom: 0; padding-left: 10px;">{{this.morning}}</p>
+                    </div>
+                    <div style="display: column;align-items: center;margin-bottom: 15px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Afternoon:-</strong><br>
+                        <p style="margin-bottom: 0; padding-left: 10px;">{{this.afternoon}}</p>
+                    </div>
+                    <div style="display: column;align-items: center;margin-bottom: 15px; font-size: 18px;">
+                        <strong style="width: 120px !important;">Evening:-</strong><br>
+                        <p style="margin-bottom: 0; padding-left: 10px;">{{this.evening}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each }}
+
+        </section>
+    </div>
+</body>
+
+</html>
